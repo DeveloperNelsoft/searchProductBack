@@ -18,8 +18,10 @@ export class ProductService {
     }
     
     // Get a single Product
-    async getProduct(id: string): Promise<Product> {
-        const product = await this.productModel.findById(id); 
+    async getProduct(id: number): Promise<Product[]> {
+        // const product = await this.productModel.findById(id);
+        const product = await this.productModel.find({"id": id});
+
         return product;
     }
 

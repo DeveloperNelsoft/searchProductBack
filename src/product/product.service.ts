@@ -18,8 +18,8 @@ export class ProductService {
     }
     
     // Get a single Product
-    async getProduct(productID: string): Promise<Product> {
-        const product = await this.productModel.findById(productID); 
+    async getProduct(id: string): Promise<Product> {
+        const product = await this.productModel.findById(id); 
         return product;
     }
 
@@ -30,16 +30,16 @@ export class ProductService {
     }
 
     // Delete Product
-    async deleteProduct(productID: string): Promise<any> {
-        const deletedProduct = await this.productModel.findOneAndDelete(productID);
-        return deletedProduct;
-    }
+    // async deleteProduct(_id: number): Promise<any> {
+    //     const deletedProduct = await this.productModel.findOneAndDelete(_id);
+    //     return deletedProduct;
+    // }
 
-    // Put a single product
-    async updateProduct(productID: string, createProductDTO: CreateProductDTO): Promise<Product> {
-        const updatedProduct = await this.productModel
-                            .findByIdAndUpdate(productID, createProductDTO, {new: true});
-        return updatedProduct;
-    }
+    // // Put a single product
+    // async updateProduct(id: string, createProductDTO: CreateProductDTO): Promise<Product> {
+    //     const updatedProduct = await this.productModel
+    //                         .findByIdAndUpdate(id, createProductDTO, {new: true});
+    //     return updatedProduct;
+    // }
 
 }

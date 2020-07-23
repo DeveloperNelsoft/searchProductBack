@@ -35,25 +35,25 @@ export class ProductController {
     }
 
     // Delete Product: /delete?productID=5c9d45e705ea4843c8d0e8f7
-    @Delete('/delete')
-    async deleteProduct(@Res() res, @Query('productID') productID) {
-        const productDeleted = await this.productService.deleteProduct(productID);
-        if (!productDeleted) throw new NotFoundException('Product does not exist!');
-        return res.status(HttpStatus.OK).json({
-            message: 'Product Deleted Successfully',
-            productDeleted
-        });
-    }
+    // @Delete('/delete')
+    // async deleteProduct(@Res() res, @Query('productID') productID) {
+    //     const productDeleted = await this.productService.deleteProduct(productID);
+    //     if (!productDeleted) throw new NotFoundException('Product does not exist!');
+    //     return res.status(HttpStatus.OK).json({
+    //         message: 'Product Deleted Successfully',
+    //         productDeleted
+    //     });
+    // }
 
     // Update Product: /update?productID=5c9d45e705ea4843c8d0e8f7
-    @Put('/update')
-    async updateProduct(@Res() res, @Body() createProductDTO: CreateProductDTO, @Query('productID') productID) {
-        const updatedProduct = await this.productService.updateProduct(productID, createProductDTO);
-        if (!updatedProduct) throw new NotFoundException('Product does not exist!');
-        return res.status(HttpStatus.OK).json({
-            message: 'Product Updated Successfully',
-            updatedProduct 
-        });
-    }
+    // @Put('/update')
+    // async updateProduct(@Res() res, @Body() createProductDTO: CreateProductDTO, @Query('productID') productID) {
+    //     const updatedProduct = await this.productService.updateProduct(productID, createProductDTO);
+    //     if (!updatedProduct) throw new NotFoundException('Product does not exist!');
+    //     return res.status(HttpStatus.OK).json({
+    //         message: 'Product Updated Successfully',
+    //         updatedProduct 
+    //     });
+    // }
 
 }

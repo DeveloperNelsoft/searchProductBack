@@ -6,19 +6,14 @@ import { ProductModule } from './product/product.module';
 
 @Module({
 
-  // return await mongoose.connect('mongodb://172.17.0.1:27017/promotions',
-  // {
-  //       "user": "productListUser",
-  //       "pass": "productListPassword"
-  // })
-
   imports: [
     MongooseModule.forRoot('mongodb://172.17.0.1:27017/promotions', {
       "user": "productListUser",
       "pass": "productListPassword",
-      auth: {
-        authdb: 'admin'
-      } 
+      "authdb": "admin"
+      // auth: {
+      //   "authdb": "admin"
+      // } 
     }),
     ProductModule
   ],
